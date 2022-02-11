@@ -13,7 +13,7 @@
 
 default: &default 
   adapter: postgresql
-  database: <%= ENV['DATABASE'] || 'openlibrarytask' %>
+  database: <%= ENV['DATABASE'] || 'books' %>
   username: <%= ENV['DATABASE_USER'] || 'postgres' %>
   password: <%= ENV['DATABASE_PASSWORD'] || 'test123' %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -25,7 +25,7 @@ default: &default
 development:
   <<: *default
   adapter: postgresql
-  database: <%= ENV['DATABASE'] || 'openlibrary' %>
+  database: <%= ENV['DATABASE'] || 'books' %>
   username: <%= ENV['DATABASE_USER'] || 'postgres' %>
   password: <%= ENV['DATABASE_PASSWORD'] || 'test123' %>
   host: <%= ENV['DATABASE_HOSTNAME'] || 'localhost' %>
@@ -39,7 +39,7 @@ development:
 test:
   <<: *default
   adapter: postgresql
-  database: <%= ENV['DATABASE'] || 'openlibrary' %>
+  database: <%= ENV['DATABASE'] || 'books' %>
   username: <%= ENV['DATABASE_USER'] || 'postgres' %>
   password: <%= ENV['DATABASE_PASSWORD'] || 'test123' %>
   host: <%= ENV['DATABASE_HOSTNAME'] || 'localhost' %>
@@ -48,7 +48,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: <%= ENV['DATABASE'] || 'openlibrary' %>
+  database: <%= ENV['DATABASE'] || 'books' %>
   username: <%= ENV['DATABASE_USER'] || 'postgres' %>
   password: <%= ENV['DATABASE_PASSWORD'] || 'test123' %>
   host: <%= ENV['DATABASE_HOSTNAME'] || 'localhost' %>
