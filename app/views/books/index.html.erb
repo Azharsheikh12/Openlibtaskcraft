@@ -1,14 +1,66 @@
-<p style="color: green"><%= notice %></p>
+<!-- <p style="color: green"><%#= notice %></p>
 
 <h1>Books</h1>
 
 <div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
+  <%# @books.each do |book| %>
+    <%#= render book %>
     <p>
-      <%= link_to "Show this book", book %>
+      <%#= link_to "Show this book", book %>
     </p>
-  <% end %>
+  <%# end %>
 </div>
 
-<%= link_to "New book", new_book_path %>
+<%#= link_to "New book", new_book_path %>
+
+<%#= link_to "New book", new_book_path %>
+ -->
+
+
+
+  
+<%#= render  'books/searchbar' %>  
+
+   <p id="notice"><%= notice %></p>
+
+
+
+      <p style = "color:green"><%= notice%></p>
+        <div class="col-lg-8 mx-auto">
+      <%#if current_user && current_user.admin %> 
+
+              <%= link_to 'Add New Book', new_book_path, class:"btn btn-outline-primary btn-lg mb-3"%> &emsp;
+
+      <%# end  %>              
+        <h1>Available Books</h1>
+        <div id="books">
+            <%@books.each do |book| %>
+              <div class="card shadow mb-3">
+                <div class="card-body">
+                  <%#= image_tag book.image if book.image.attached? %>
+                  <%#= video_tag book.avatar if book.avatar.attached? %>
+                 <p>
+                  <strong>Title:</strong> <%= book.title %><br>
+                  <strong>Author:</strong><%= book.author %><br>
+                  <strong>Subject:</strong><%= book.b_subject %><br>
+                  <!-- <strong>Id:</strong><%#= book.user_id %><br> -->
+                 </p>
+              </div>
+           </div> 
+
+
+          <table>
+            <td>
+              <%= link_to 'Book Details', book , class:"btn btn-primary btn-lg mb-3"%></td>
+               <%#if current_user && current_user.admin %> 
+                <td><%= link_to 'Edit', edit_book_path(book), class:"btn btn-primary btn-lg mb-3" %>
+                </td>
+                <td><%= button_to 'Destroy', book, class:"btn btn-primary btn-lg mb-3", method: :delete, data: { confirm: 'Are you sure?' } %> </td>     
+                <% end %>
+            </table>
+        <%#end%>
+            
+      </div>
+    </div>
+
+
