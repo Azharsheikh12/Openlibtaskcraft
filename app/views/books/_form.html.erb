@@ -11,23 +11,28 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="form-group mb-3">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="form-group mb-3">
     <%= form.label :author, style: "display: block" %>
     <%= form.text_field :author %>
   </div>
-  <div>
+  <div class="form-group mb-3">
     <%= form.label :b_subject, style: "display: block" %>
     <%= form.text_field :b_subject %>
   </div>
-  <div>
+  <div class="form-group mb-3">
     <%= form.label :description, style: "display: block" %>
     <%= form.text_field :description %>
   </div>
+
+   <div class="form-group mb-3">
+    <%= form.label :image , style: "display: block" %><br>
+    <%= form.file_field :image%>
+  </div>    
 
   <div>
     <%= form.submit %>

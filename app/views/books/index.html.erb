@@ -1,29 +1,4 @@
-<!-- <p style="color: green"><%#= notice %></p>
-
-<h1>Books</h1>
-
-<div id="books">
-  <%# @books.each do |book| %>
-    <%#= render book %>
-    <p>
-      <%#= link_to "Show this book", book %>
-    </p>
-  <%# end %>
-</div>
-
-<%#= link_to "New book", new_book_path %>
-
-<%#= link_to "New book", new_book_path %>
- -->
-
-
-
-  
-<%#= render  'books/searchbar' %>  
-
    <p id="notice"><%= notice %></p>
-
-
 
       <p style = "color:green"><%= notice%></p>
         <div class="col-lg-8 mx-auto">
@@ -37,7 +12,7 @@
             <%@books.each do |book| %>
               <div class="card shadow mb-3">
                 <div class="card-body">
-                  <%#= image_tag book.image if book.image.attached? %>
+                  <%= image_tag book.image if book.image.attached? %>
                   <%#= video_tag book.avatar if book.avatar.attached? %>
                  <p>
                   <strong>Title:</strong> <%= book.title %><br>
@@ -56,9 +31,9 @@
                 <td><%= link_to 'Edit', edit_book_path(book), class:"btn btn-primary btn-lg mb-3" %>
                 </td>
                 <td><%= button_to 'Destroy', book, class:"btn btn-primary btn-lg mb-3", method: :delete, data: { confirm: 'Are you sure?' } %> </td>     
-                <% end %>
+                <%# end %>
             </table>
-        <%#end%>
+        <%end%>
             
       </div>
     </div>

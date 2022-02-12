@@ -74,3 +74,5 @@ end
 gem "devise"
 
 # gem 'activeadmin'
+gem 'mini_magick', '>= 4.9.5'
+
