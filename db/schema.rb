@@ -45,13 +45,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_14_085852) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "author"
     t.string "b_subject"
     t.bigint "user_id"
     t.string "attachment"
     t.index ["user_id"], name: "index_books_on_user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
