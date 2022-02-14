@@ -1,40 +1,53 @@
-<%= form_with(model: book) do |form| %>
+  <%= image_tag @book.image if @book.image.attached? %>
+
+<%= form_with(model: book, local: true) do |form| %>
   <% if book.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation">
       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
-        <% book.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="form-group mb-3">
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.label :title , style: "display: block"%><br>
+    <%= form.text_field :title , class: "form-control form-control-lg"%>
+  </div>
+
+
+  <div class="form-group mb-3">
+    <%= form.label :author , style: "display: block"%><br>
+    <%= form.text_field :author , class: "form-control form-control-lg" %>
+  </div>  
+
+  <div class="form-group mb-3">
+    <%= form.label :subject , style: "display: block"%><br>
+    <%= form.text_field :b_subject , class: "form-control form-control-lg" %>
   </div>
 
   <div class="form-group mb-3">
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
-  </div>
-  <div class="form-group mb-3">
-    <%= form.label :b_subject, style: "display: block" %>
-    <%= form.text_field :b_subject %>
-  </div>
-  <div class="form-group mb-3">
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
+    <%= form.label :description , style: "display: block" %><br>
+    <%= form.text_area :description , class: "form-control form-control-lg"%>
+  </div>  
 
    <div class="form-group mb-3">
     <%= form.label :image , style: "display: block" %><br>
     <%= form.file_field :image%>
-  </div>    
+  </div>     
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group mb-9">
+    <%= form.label :attachment , style: "display: block" %><br>
+    <%= form.file_field :attachment%>
+  </div><br>  
+  
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary btn-lg"%>
+    <%= link_to 'Back', books_path, class: "btn btn-outline-primary btn-lg" %>
+
   </div>
 <% end %>

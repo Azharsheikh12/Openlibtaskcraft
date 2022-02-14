@@ -1,10 +1,26 @@
-<h1>Welcome to books library</h1>
+<!-- <h1>Welcome to books library</h1>
 
-<%= link_to "Available books", books_path%>
-
-
-<%= link_to "Sign in", new_user_session_path%>
-<%= link_to "Sign up", new_user_registration_path%>
+<%#= link_to "Available books", books_path%>
 
 
-<%= link_to "Sign out", destroy_user_session_path%>
+<%#= link_to "Sign in", new_user_session_path%>
+<%#= link_to "Sign up", new_user_registration_path%>
+
+
+<%#= link_to "Sign out", destroy_user_session_path%> -->
+
+
+<div class="card shadow mb-3">
+    <div class="card-body mx-auto ">	
+        <h1>Welcome to Open Library</h1>
+        <%= link_to 'See Available Books', books_path ,class:"btn btn-outline-primary btn-lg mb-3 mx-auto"%>
+        <%= link_to 'Upcoming Books', books_path ,class:"btn btn-outline-primary btn-lg mb-3 mx-auto"%><br>
+
+
+        <%# if current_user %>
+        <%# else %>
+        <%= link_to 'Sign up', new_user_registration_path, class:"btn btn-primary" %>
+        <%= link_to 'Sign in', new_user_session_path,  class:"btn btn-primary " %>
+        <%#end%>
+    </div>
+</div>

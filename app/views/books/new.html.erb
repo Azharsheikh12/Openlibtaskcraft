@@ -1,9 +1,23 @@
-<h1>New book</h1>
+<!-- <h1>New book</h1>
 
-<%= render "form", book: @book %>
+<%#= render "form", book: @book %>
 
 <br>
 
 <div>
-  <%= link_to "Back to books", books_path %>
+</div>
+ -->
+
+
+ <div class="col-lg-8 mx-auto">
+  <div class="card shadow">
+
+    <div class="card-header">
+      <h1 class="card-title">Add New Book</h1>
+    </div>
+    <div class="card-body">
+      <%= render 'form', book: @book %>
+    </div>
+  <%#= link_to "Back to books", books_path %>
+  </div>
 </div>

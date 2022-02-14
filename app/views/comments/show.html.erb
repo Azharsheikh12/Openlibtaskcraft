@@ -1,0 +1,32 @@
+<!-- <p style="color: green"><%#= notice %></p>
+
+<%#= render @comment %>
+
+<div>
+  <%#= link_to "Edit this comment", edit_comment_path(@comment) %> |
+  <%#= link_to "Back to comments", comments_path %>
+
+  <%#= button_to "Destroy this comment", @comment, method: :delete %>
+</div>
+ -->
+
+
+ <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @comment.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @comment.body %>
+</p>
+
+<p>
+  <strong>book:</strong>
+  <%= @comment.book_id %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

@@ -74,5 +74,13 @@ end
 gem "devise"
 
 # gem 'activeadmin'
+
 gem 'mini_magick', '>= 4.9.5'
+
+gem 'carrierwave', '~> 2.0'
+
+gem 'cssbundling-rails'
+
+# gem 'bootstrap-sass','~> 2.3.2'
+
 
